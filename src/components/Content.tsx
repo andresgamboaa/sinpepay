@@ -12,7 +12,6 @@ export interface Data {
     detail: string,
 }
 
-
 export default function Content() {
     const [data, setData] = useState<Data | undefined>()
     const [isOnMobile, setIsOnMobile] = useState(false)
@@ -60,7 +59,7 @@ export default function Content() {
                 onCreateLinkClick={() => {}}
             />
 
-            <main class="h-full border flex flex-col gap-2 justify-center items-center">
+            <main class="flex-1 border flex flex-col gap-2 justify-center items-center">
 
                 {isInvalidLink && 
                     <div class="h-full grid place-content-center">
@@ -77,7 +76,7 @@ export default function Content() {
                             </div>
                             {!isOnMobile && <QRCodeView data={data} />}
                         </div>
-                        {!isOnMobile && <p class="text-center mt-6 opacity-70">Escanee el codigo con su telefono.</p>}
+                        {!isOnMobile && <p class="text-center mt-6 opacity-70">Escanee el código con su teléfono móvil.</p>}
                         {!isOnMobile && redirect && <ContinueButton redirect={redirect}/>}
                     </div>
                 }
