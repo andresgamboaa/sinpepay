@@ -7,7 +7,6 @@ export default function ContinueButton({redirect}: Props) {
     const url = new URL(redirect)
     return (
         <div id="pay-button-container" class="flex flex-col justify-center items-center gap-2 mt-6">
-            <p class="text-center">Escanea el código con tu teléfono, realiza la transferencia y presiona continuar.</p>
             <a 
                 href={redirect}
                 onClick={(e) => {

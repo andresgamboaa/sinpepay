@@ -76,7 +76,7 @@ export default function Content() {
                             </div>
                             {!isOnMobile && <QRCodeView data={data} />}
                         </div>
-                        {!isOnMobile && <p class="text-center mt-6 opacity-70">Escanee el código con su teléfono móvil.</p>}
+                        {!isOnMobile && <p class="text-center mt-6 opacity-70">Escanee el código con su teléfono móvil y realiza la transferencia.</p>}
                         {!isOnMobile && redirect && <ContinueButton redirect={redirect}/>}
                     </div>
                 }
