@@ -14,9 +14,7 @@ interface Data {
     redirect: string | undefined
 }
 
-const validate = (data: Data): Data => {
-    return data
-}
+
 export default function CreateLinkModal({onClose}: Props) {
     const [data, setData] = useState<Data>({
         receiver: undefined,
@@ -44,7 +42,7 @@ export default function CreateLinkModal({onClose}: Props) {
         setLink(undefined)
         if (!(newData.amountError || newData.receiverError || newData.detailError)) {
             const encodedData = encodeURIComponent(JSON.stringify([data.amount, data.receiver, data.detail]))
-            setLink(`http://localhost:4321/pago/?data=${encodedData}${data.redirect?`&${data.receiver}`: ""}`)
+            setLink(`https://sinpepay.netlify.app/pago/?data=${encodedData}${data.redirect?`&${data.receiver}`: ""}`)
         }
     }
 

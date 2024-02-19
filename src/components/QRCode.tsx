@@ -17,8 +17,7 @@ export default function QRCodeView({data}:Props) {
   //const stringData = JSON.stringify([data.amount, data.receiver, data.detail])
   const stringData = encodeURIComponent(JSON.stringify([data.amount, data.receiver, data.detail]))
 
-  const baseUrl = "https://loving-crab-hopefully.ngrok-free.app"
-  //const baseUrl = "https://sinpepay.com/pago/"
+  const baseUrl = "https://sinpepay.netlify.app"
   useEffect(() => {
     new window.QRCode(ref.current, {
       text:  `${baseUrl}/pago/?data=${stringData}`,

@@ -122,12 +122,3 @@ function isMobileDivice() {
     let regexp = /android|iphone/i; 
     return regexp.test(navigator.userAgent); 
 }
-
-const isUrl = (string: string) => {
-    try {
-        new URL(string);
-        return true;
-    } catch (_) {
-        return false;
-    }
-};
