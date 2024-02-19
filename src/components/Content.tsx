@@ -56,7 +56,6 @@ export default function Content() {
         <div class="flex-1 w-full flex flex-col">
             <Navbar 
                 onBankChanged={setBankNumber}
-                onCreateLinkClick={() => {}}
             />
 
             <main class="flex-1 border flex flex-col gap-2 justify-center items-center">
