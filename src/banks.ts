@@ -16,7 +16,7 @@ export const banks: Bank[] = [
     { name: "Coopelecheros", number: 60405957},
     { name: "Coopenae", number: 62232599},
     { name: "Davivienda", number: 70707474},
-    { name: "LAFIASE", number: 9091},
+    { name: "LAFISE", number: 9091},
     { name: "MUCAP", number: 62229525},
     { name: "Mutual Alajuela", number: 70707079},
     { name: "Promerica", number: 62232450},
