@@ -49,7 +49,7 @@ export default function Content() {
             setData(formatedData)
         }
 
-        console.log(encodeURI(JSON.stringify([1000, 64324820, "Un cafe"])))
+        //console.log(encodeURI(JSON.stringify([1000, 64324820, "Un cafe"])))
     }, [])
 
     return (
@@ -108,11 +108,17 @@ function formatData(data:any) {
     //const redirect = data.at(3)
 
     // Validacion
-    const invalidDetalleRegex = /^[a-zA-Z0-9]{1,19}$/;
+    const detalleRegex = /^[a-zA-Z0-9 ]{1,19}$/;
 
-    if (!Number.isInteger(amount)) return null
-    if (!Number.isInteger(receiver)) return null
-    if (invalidDetalleRegex.test(detail)) return null
+    if (!Number.isInteger(amount)) {
+        return null
+    }
+    if (!Number.isInteger(receiver)) {
+        return null
+    }
+    if (!detalleRegex.test(detail)) {
+        return null
+    }
     //if (redirect !== undefined && !isUrl(redirect)) return null
 
     return { amount, receiver, detail }
