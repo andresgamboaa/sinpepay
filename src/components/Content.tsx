@@ -71,7 +71,7 @@ export default function Content() {
                         <div class="flex flex-col justify-center items-center md:flex-row">
                             <div class="h-fit w-full flex flex-col gap-4 justify-center items-center p-4">
                                 <PayDetails data={data}/>
-                                {isOnMobile && <PayButton number={bankNumber} detail={data.detail}/>}
+                                {isOnMobile && <PayButton number={bankNumber} data={data}/>}
                             </div>
                             {!isOnMobile && <QRCodeView data={data} />}
                         </div>
