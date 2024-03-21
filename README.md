@@ -8,13 +8,7 @@ Herramienta para facilitar transacciones de SINPE Móvil (Costa Rica) vía SMS.
 * En smartphones el botón de pago abre la aplicación de mensages con un texto autocompletado, el usuario solo debe presionar el botón de enviar. Si el usuario cuenta con la aplicación esta se abre al hacer click en los enlaces de pago para una mejor experiencia.
 * En computadoras se muestra un código QR para facilitar la transacción desde un smartphone.
 
-![Enlace en la web desde la computadora](screenshots/web.png?raw=true "Enlace en computadora")
-
-![Enlace en la web desde el movil](screenshots/webmovil.png?raw=true "Enlace en computadora")
-
-![Enlace desde la aplicacion android](screenshots/app.png?raw=true "Enlace desde la aplicacion android")
-
-Crear enlaces desde un lenguage de programación
+## Crear enlaces desde un lenguage de programación
 ```typescript
     let newData: Data = {
         cantidad: 500,
@@ -27,3 +21,12 @@ Crear enlaces desde un lenguage de programación
     const encodedData = encodeURIComponent(JSON.stringify([cantidad, destino, detalle]))
     const enlace = `https://sinpepay.net/pago/?data=${encodedData}${redirect?`&redirect=${redirect}`: ""}`
 ```
+
+### Enlace en computadora
+![Enlace en la web desde la computadora](screenshots/web.png?raw=true "Enlace en computadora")
+
+### Enlace en smartphone
+![Enlace en la web desde el movil](screenshots/webmovil.jpg?raw=true "Enlace en smartphone")
+
+### Enlace en aplicación android
+![Enlace desde la aplicacion android](screenshots/app.jpg?raw=true "Enlace desde la aplicacion android")
