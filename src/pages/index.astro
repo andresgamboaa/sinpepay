@@ -2,19 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer.astro'
+import AndroidSection from '../components/AndroidSection.astro'
 ---
 
 <Layout title="sinpepay">
 	<div class="flex-1 w-full flex flex-col text-black/70 font-semibold relative">
 		<Navbar client:load/>
 		<main class="flex-1 flex flex-col w-full max-w-[1200px] mx-auto gap-2 p-4">
-			<h1 class=" my-10 flex flex-col gap-2 justify-center items-center p-4">
+			<h1 class=" my-6 flex flex-col gap-2 justify-center items-center p-4">
 				<span class=" text-center ">Herramienta de código abierto para facilitar</span>
 				<span class="font-bold text-4xl text-center text-black"><span class="text-orange-600">Pagos</span> vía SMS</span>
 				<span class="text-sm text-center ">Mediante el servicio SINPE Móvil (Costa Rica)</span>
 			</h1>
-			<div class="w-fit mx-auto text-center max-w-[600px]  rounded-md p-4">
-				<section>
+			<div class="w-fit mx-auto text-center max-w-[600px] rounded-md">
+				<section class="opacity-90">
 					<h2 class="text-2xl text-black/80 mb-2">Objetivos</h1>
 					<ul class="">
 						<li>Facilitar el uso de SINPE Móvil como medio de pago en comercios electrónicos.</li>
@@ -22,13 +23,15 @@ import Footer from '../components/Footer.astro'
 					</ul>
 				</section>
 
-				<section>
+				<section class="mb-8 opacity-90">
 					<h2 class="text-2xl text-black/80 mt-6 mb-2">Características</h1>
 					<ul class="">
 						<li>Permite crear enlaces de pago para agregar en páginas web, redes sociales o aplicaciones de mensajería.</li>
 						<li>Realiza pagos escaneando códigos QR.</li>
 					</ul>
 				</section>
+
+				<AndroidSection />
 			</div>
 		</main>
 		<Footer />

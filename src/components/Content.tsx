@@ -58,7 +58,7 @@ export default function Content() {
                 onBankChanged={setBankNumber}
             />
 
-            <main class="flex-1 border flex flex-col gap-2 justify-center items-center">
+            <main class="flex-1 flex flex-col gap-2 justify-center items-center">
 
                 {isInvalidLink && 
                     <div class="h-full grid place-content-center">

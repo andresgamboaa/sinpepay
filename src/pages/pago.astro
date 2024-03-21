@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Content from '../components/Content';
 import Footer from '../components/Footer.astro'
+import AndroidSection from '../components/AndroidSection.astro';
 ---
 
 <Layout title="Pago">
 	<div class=" flex-1 flex flex-col text-black/80 font-semibold relative">
 		<Content client:load/>
+		<div class="p-4">
+			<AndroidSection />
+		</div>
 		<Footer />
 	</div>
 </Layout>
