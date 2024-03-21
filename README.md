@@ -10,23 +10,12 @@ Herramienta para facilitar transacciones de SINPE Móvil (Costa Rica) vía SMS.
 
 ## Crear enlaces desde un lenguage de programación
 ```typescript
-    let newData: Data = {
-        cantidad: 500,
-        destino: 84634758,
-        detalle: "pago" // Tamano maximo de 20 sin caracteres especiales.
-        redirect: "https://www.algunapagina.com" // Opcional (Redirige al usuario cuando este realiza la transaccion)
-    }
+    const cantidad: 500
+    const destino: 84634758
+    const detalle: "pago" // Tamano maximo de 20 sin caracteres especiales.
+    const redirect: "https://www.algunapagina.com" // Opcional (Redirige al usuario cuando este realiza la transaccion)
     // * redirect no se incluye en el QR
 
     const encodedData = encodeURIComponent(JSON.stringify([cantidad, destino, detalle]))
     const enlace = `https://sinpepay.net/pago/?data=${encodedData}${redirect?`&redirect=${redirect}`: ""}`
 ```
-
-### Enlace en computadora
-![Enlace en la web desde la computadora](screenshots/web.png?raw=true "Enlace en computadora")
-
-### Enlace en smartphone
-![Enlace en la web desde el movil](screenshots/webmovil.jpg?raw=true "Enlace en smartphone")
-
-### Enlace en aplicación android
-![Enlace desde la aplicacion android](screenshots/app.jpg?raw=true "Enlace desde la aplicacion android")
