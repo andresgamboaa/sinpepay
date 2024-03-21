@@ -42,7 +42,7 @@ export default function CreateLinkModal({onClose}: Props) {
         setLink(undefined)
         if (!(newData.amountError || newData.receiverError || newData.detailError)) {
             const encodedData = encodeURIComponent(JSON.stringify([data.amount, data.receiver, data.detail]))
-            setLink(`https://sinpepay.net/pago/?data=${encodedData}${data.redirect?`&${data.receiver}`: ""}`)
+            setLink(`https://sinpepay.net/pago/?data=${encodedData}${data.redirect?`&redirect=${data.redirect}`: ""}`)
         }
     }
 

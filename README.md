@@ -1,54 +1,29 @@
-# Astro Starter Kit: Basics
+# sinpepay
+Herramienta para facilitar transacciones de SINPE Móvil (Costa Rica) vía SMS.
 
-```sh
-npm create astro@latest -- --template basics
+## Características
+* Permite crear enlaces de pago para agregar en páginas web, redes sociales o aplicaciones de mensajería. Por ejemplo: https://sinpepay.net/pago/?data=%5B500%2C12345678%2C%22pago%22%5D
+
+* Permite realizar transferencias SINPE Móvil escaneando códigos QR.
+* En smartphones el botón de pago abre la aplicación de mensages con un texto autocompletado, el usuario solo debe presionar el botón de enviar. Si el usuario cuenta con la aplicación esta se abre al hacer click en los enlaces de pago para una mejor experiencia.
+* En computadoras se muestra un código QR para facilitar la transacción desde un smartphone.
+
+![Enlace en la web desde la computadora](screenshots/web.png?raw=true "Enlace en computadora")
+
+![Enlace en la web desde el movil](screenshots/webmovil.png?raw=true "Enlace en computadora")
+
+![Enlace desde la aplicacion android](screenshots/app.png?raw=true "Enlace desde la aplicacion android")
+
+Crear enlaces desde un lenguage de programación
+```typescript
+    let newData: Data = {
+        cantidad: 500,
+        destino: 84634758,
+        detalle: "pago" // Tamano maximo de 20 sin caracteres especiales.
+        redirect: "https://www.algunapagina.com" // Opcional (Redirige al usuario cuando este realiza la transaccion)
+    }
+    // * redirect no se incluye en el QR
+
+    const encodedData = encodeURIComponent(JSON.stringify([cantidad, destino, detalle]))
+    const enlace = `https://sinpepay.net/pago/?data=${encodedData}${redirect?`&redirect=${redirect}`: ""}`
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
