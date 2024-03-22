@@ -42,6 +42,7 @@ export default function Content() {
 
         if (rawData) {
             const formatedData = formatData(rawData)
+            console.log(formatedData)
             if (!formatedData) {
                 setIsInvalidLink(true)
                 return
@@ -94,6 +95,7 @@ function getParams() {
         redirect = decodeURIComponent(redirect)
     }
     if (data) {
+        console.log(decodeURIComponent(data))
         return {data:JSON.parse(decodeURIComponent(data)), redirect}
     }
     return null
@@ -116,7 +118,7 @@ function formatData(data:any) {
     if (!Number.isInteger(receiver)) {
         return null
     }
-    if (!detalleRegex.test(detail)) {
+    if (detail && !detalleRegex.test(detail)) {
         return null
     }
     //if (redirect !== undefined && !isUrl(redirect)) return null
