@@ -24,8 +24,10 @@ export default function SelectBank({onBankChanged}: Props) {
 
 
     return (
-        <div class="h-full flex justify-center gap-2 items-center">
+        <label for="entidad" class="h-full flex justify-center gap-2 items-center">
+            Entidad: 
             <select 
+                id="entidad"
                 onChange={(e) => {
                     setBankNumber(parseInt(e.currentTarget.value))
                 }}
@@ -35,6 +37,6 @@ export default function SelectBank({onBankChanged}: Props) {
             >
                 {banks.map((bank) => <option key={bank.number} value={bank.number}>{ `${bank.name} (${bank.number})`}</option>)}
             </select>	
-        </div>
+        </label>
     )
 }
